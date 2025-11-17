@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Carousel from "./carousel/Carousel.tsx";
 
 export function Main() {
   const elementRef = useRef<HTMLDivElement>(null);
@@ -55,11 +56,11 @@ export function Main() {
   }, []);
 
   return (
-    <section className={"w-screen h-screen overflow-y-auto"} ref={elementRef}>
-      <article className={"w-full h-full bg-red-50"}>{"안녕하세요"}</article>
-      <article className={"w-full h-full bg-red-100"}>{"이것은"}</article>
-      <article className={"w-full h-full bg-red-150"}>{"원스크린"}</article>
-      <article className={"w-full h-full bg-red-200"}>{"페이지입니다"}</article>
-    </section>
+    <main className={"w-screen h-screen overflow-y-auto"} ref={elementRef}>
+      <Carousel />
+      <section className={"w-full h-full bg-red-100"}>{"이것은"}</section>
+      <section className={"w-full h-full bg-red-150"}>{"원스크린"}</section>
+      <section className={"w-full h-full bg-red-200"}>{"페이지입니다"}</section>
+    </main>
   );
 }
